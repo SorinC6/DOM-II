@@ -5,6 +5,7 @@ const imageRound = document.querySelector('.rounded');
 const container = document.querySelector('.home');
 const aNav = document.querySelectorAll('a');
 const h1 = document.querySelector('h1');
+const allImg=document.querySelectorAll('img');
 //const contentSection=document.querySelector('.content-section');
 const title = document.querySelector('.titleDoc');
 
@@ -93,3 +94,25 @@ function prompMessage() {
     console.log(name + 'you are sign out');
     h1.textContent=name;
 }
+
+const navContainer=document.querySelector('nav');
+const body=document.querySelector('body')
+
+// ADDS AN ALERT WHEN THE USER FIRST SCROLLS WITH THE MOUSE WHEEL BUT THEM REMOVES THAT EVENT SO THEY CAN ACTUALLY NAVIGATE THE SITE
+body.addEventListener('wheel', function alertMeOnce(){
+  alert("WEEEEEEEEEEEE!!!!!!");
+  body.removeEventListener('wheel', alertMeOnce);
+});
+
+const funBusBanner = document.querySelector(".intro > img" );
+
+// DRAG THE FUN-BUS INTRO IMAGE TO SCALE IT 
+funBusBanner.addEventListener('drag', (e) => e.target.style.transform = 'scale(1.5)');
+
+
+// ON DOCUMENT LOAD AN ALERT WILL APEAR TELLING THE USER THE 9 OTHER THINGS THEY CAN DO WITH THE SITE
+window.addEventListener("load", function(event) {
+    alert(" Hello Folks -All resources finished loading  No intruction ");
+  });
+
+  
