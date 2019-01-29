@@ -37,7 +37,7 @@ function colorRandom() {
 		let randomColor = getRandomColor();
 		item.style.color = randomColor;
 	});
-};
+}
 
 //adding mouseover and mouseout event listeners on h1
 h1.addEventListener('mouseover', (event) => {
@@ -48,30 +48,48 @@ h1.addEventListener('mouseover', (event) => {
 h1.addEventListener('mouseout', (event) => {
 	event.target.textContent = 'Lambda School Fun Bus';
 	event.target.style.color = 'red';
-}); 
+});
 
-
-//adding a keydown event on window 
+//adding a keydown event on window
 window.addEventListener('keydown', checkKeyPress);
 
-const textContent=document.querySelectorAll('.text-content');
+const textContent = document.querySelectorAll('.text-content');
 console.log(textContent[0]);
 
 function checkKeyPress(key) {
 	if (key.keyCode == '65') {
 		alert("The 'a' letter key has been pressed.");
-    }
-    
-    if (key.keyCode == '82') {
-        textContent[0].style.backgroundColor='red';
-    }
-    if (key.keyCode == '87') {
-        textContent[0].style.backgroundColor='white';
-    }
-    if (key.keyCode == '66') {
-        textContent[0].style.backgroundColor='blue';
-    }
-    if (key.keyCode == '86') {
-        textContent[0].style.backgroundColor='violet';
 	}
+
+	if (key.keyCode == '82') {
+		textContent[0].style.backgroundColor = 'red';
+	}
+	if (key.keyCode == '87') {
+		textContent[0].style.backgroundColor = 'white';
+	}
+	if (key.keyCode == '66') {
+		textContent[0].style.backgroundColor = 'blue';
+	}
+	if (key.keyCode == '86') {
+		textContent[0].style.backgroundColor = 'violet';
+	}
+}
+
+//alert when a paragraph is copied
+const p = document.querySelectorAll('p');
+p.forEach((item) => {
+	item.addEventListener('copy', function() {
+		alert('Warning, a paragraph is copied');
+	});
+});
+
+//promp an imput box when buttons are pressed
+const allButtons = document.querySelectorAll('.btn');
+allButtons.forEach((item) => {
+	item.addEventListener('click', prompMessage);
+});
+function prompMessage() {
+	let name = prompt('Enter your name');
+    console.log(name + 'you are sign out');
+    h1.textContent=name;
 }
