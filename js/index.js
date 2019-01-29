@@ -32,3 +32,24 @@ h2.forEach((item) => {
 		event.target.style.textAlign = 'center';
 	});
 });
+
+
+//added random color on all a tag when hover over container
+container.addEventListener('mousemove', colorRandom);
+function colorRandom() {
+	aNav.forEach((item) => {
+		let randomColor = getRandomColor();
+		item.style.color = randomColor;
+	});
+};
+
+//adding mouseover and mouseout event listeners on h1
+h1.addEventListener('mouseover', (event) => {
+	event.target.textContent = 'Lambda School DOM II';
+	event.target.style.color = 'purple';
+});
+
+h1.addEventListener('mouseout', (event) => {
+	event.target.textContent = 'Lambda School Fun Bus';
+	event.target.style.color = 'red';
+});
