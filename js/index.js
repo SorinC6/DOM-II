@@ -5,7 +5,7 @@ const imageRound = document.querySelector('.rounded');
 const container = document.querySelector('.home');
 const aNav = document.querySelectorAll('a');
 const h1 = document.querySelector('h1');
-const allImg=document.querySelectorAll('img');
+const allImg = document.querySelectorAll('img');
 //const contentSection=document.querySelector('.content-section');
 const title = document.querySelector('.titleDoc');
 
@@ -86,33 +86,63 @@ p.forEach((item) => {
 
 //promp an imput box when buttons are pressed
 const allButtons = document.querySelectorAll('.btn');
-allButtons.forEach((item) => {
-	item.addEventListener('click', prompMessage);
-});
+allButtons[1].addEventListener('click', prompMessage);
+
 function prompMessage() {
 	let name = prompt('Enter your name');
-    console.log(name + 'you are sign out');
-    h1.textContent=name;
+	console.log(name + 'you are sign out');
+	h1.textContent = name;
 }
 
-const navContainer=document.querySelector('nav');
-const body=document.querySelector('body')
+const navContainer = document.querySelector('nav');
+const body = document.querySelector('body');
 
 // ADDS AN ALERT WHEN THE USER FIRST SCROLLS WITH THE MOUSE WHEEL BUT THEM REMOVES THAT EVENT SO THEY CAN ACTUALLY NAVIGATE THE SITE
-body.addEventListener('wheel', function alertMeOnce(){
-  alert("WEEEEEEEEEEEE!!!!!!");
-  body.removeEventListener('wheel', alertMeOnce);
+body.addEventListener('wheel', function alertMeOnce() {
+	alert('WEEEEEEEEEEEE!!!!!!');
+	body.removeEventListener('wheel', alertMeOnce);
 });
 
-const funBusBanner = document.querySelector(".intro > img" );
+const funBusBanner = document.querySelector('.intro > img');
 
-// DRAG THE FUN-BUS INTRO IMAGE TO SCALE IT 
-funBusBanner.addEventListener('drag', (e) => e.target.style.transform = 'scale(1.5)');
-
+// DRAG THE FUN-BUS INTRO IMAGE TO SCALE IT
+funBusBanner.addEventListener('drag', (e) => (e.target.style.transform = 'scale(1.5)'));
 
 // ON DOCUMENT LOAD AN ALERT WILL APEAR TELLING THE USER THE 9 OTHER THINGS THEY CAN DO WITH THE SITE
-window.addEventListener("load", function(event) {
-    alert(" Hello Folks -All resources finished loading  No intruction ");
-  });
+window.addEventListener('load', function alertOnLoad(event) {
+    alert(' Hello Folks -All resources finished loading  No intruction ');
+    window.removeEventListener('load',alertOnLoad);
+});
 
-  
+//EXPERIMENT
+
+const signUpButton1 = document.querySelector('.btn');
+const signUpButton1Div = document.querySelector('.destination');
+
+// ADDED CONSOLE LOG FOR WHEN FUN IN THE SUNS DIV IS CLICKED
+signUpButton1Div.addEventListener('click', (e) => {
+	console.log('div-clicked');
+});
+
+// STOPPING THE BUBBLING OF DIV CLICKED CONSOLE LOG
+signUpButton1.addEventListener('click', (e) => {
+	console.log('signup 1 clicked');
+	e.stopPropagation();
+});
+
+const paragraph = document.querySelectorAll('p');
+window.addEventListener('resize', (e) => {
+	//alert("OUCHHHH!!!!")
+	console.log('NOOOO! don.t make me small');
+});
+
+//RIGHT CLICK ON FOOTER IT WILL CHANGE THE COLLOR
+const footer=document.querySelector('footer');
+footer.addEventListener('contextmenu', function() {
+	event.target.style.color = 'dodgerblue';
+});
+
+
+//// Try
+
+
