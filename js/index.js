@@ -110,8 +110,8 @@ funBusBanner.addEventListener('drag', (e) => (e.target.style.transform = 'scale(
 
 // ON DOCUMENT LOAD AN ALERT WILL APEAR TELLING THE USER THE 9 OTHER THINGS THEY CAN DO WITH THE SITE
 window.addEventListener('load', function alertOnLoad(event) {
-    alert(' Hello Folks -All resources finished loading  No intruction ');
-    window.removeEventListener('load',alertOnLoad);
+	//alert(' Hello Folks -All resources finished loading  No intruction ');
+	window.removeEventListener('load', alertOnLoad);
 });
 
 //EXPERIMENT
@@ -137,12 +137,34 @@ window.addEventListener('resize', (e) => {
 });
 
 //RIGHT CLICK ON FOOTER IT WILL CHANGE THE COLLOR
-const footer=document.querySelector('footer');
+const footer = document.querySelector('footer');
 footer.addEventListener('contextmenu', function() {
 	event.target.style.color = 'dodgerblue';
 });
 
+// try GreenSock animation
 
-//// Try
+const a1 = document.querySelector('.a1');
+const header2=document.querySelector('.intro h2');
+a1.addEventListener('click', () => {
+    TweenLite.to(header2, 3, {marginLeft:400,
+        backgroundColor:'purple',
+        padding:20,color:'red',
+        borderRadius:20,
+        ease: Bounce.easeOut, y: 0,
+    })
+    //console.log('alibaba')
+});
 
+const a2= document.querySelector('.a2');
+const context=document.querySelector('.test2');
+const img1=document.querySelector('.img-content');
 
+a2.addEventListener('click' ,()=> {
+    TweenLite.to(context, 3, {marginLeft:400,
+        backgroundColor:'grey',
+        padding:10,
+        borderRadius:20,
+        ease: Elastic.easeOut.config(1, 0.3), x: -100 
+    })
+})
